@@ -1,0 +1,7 @@
+node_modules
+*.idea
+*.sublime-project
+*.sublime-workspace
+yarn-error.log
+env.lock
+.env
