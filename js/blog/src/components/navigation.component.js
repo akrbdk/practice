@@ -18,7 +18,7 @@ export class NavigationComponent extends Component {
 
 function tabClickHandler(event) {
     event.preventDefault()
-    if(event.target.classList.contains('tab')) {
+    if (event.target.classList.contains('tab')) {
         Array.from(this.$el.querySelectorAll('.tab')).forEach(tab => {
             tab.classList.remove('active')
         })
