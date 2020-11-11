@@ -9,9 +9,19 @@ export class Component {
 
     hide() {
         this.$el.classList.add('hide')
+        this.onHide()
+    }
+
+    onHide(){
+
     }
 
     show() {
         this.$el.classList.remove('hide')
+        this.onShow()
+    }
+
+    onShow(){
+
     }
 }
