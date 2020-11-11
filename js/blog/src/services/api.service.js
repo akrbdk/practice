@@ -1,6 +1,6 @@
-export class ApiService {
-    constructor(url) {
-        this.url = url
+class ApiService {
+    constructor(baseUrl) {
+        this.url = baseUrl
     }
 
     async createPost(post) {
@@ -11,23 +11,34 @@ export class ApiService {
             })
             return useRequest(request)
         } catch (error) {
-            console.error('Error!')
+            console.error(error)
         }
     }
 
-    async fetchPosts(){
+    async fetchPosts() {
         try {
-            const request = new Request(this.url + '/posts.json', {
+            const request = new Request(`${this.url}/posts.json`, {
                 method: 'get'
             })
             return useRequest(request)
-        } catch (error){
-            //console.log(error)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async fetchPostById(id) {
+        try {
+            const request = new Request(`${this.url}/posts/${id}.json`, {
+                method: 'get'
+            })
+            return useRequest(request)
+        } catch (error) {
+            console.error(error)
         }
     }
 }
 
-async function useRequest(request){
+async function useRequest(request) {
     const response = await fetch(request)
     return await response.json()
 }

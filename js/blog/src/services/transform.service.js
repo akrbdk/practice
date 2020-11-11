@@ -1,7 +1,7 @@
-export class TransformService{
-    static fbObjectToArray(fbObject){
-        return Object.keys(fbObject).map(key => {
-            const item = fbObject[key]
+export class TransformService {
+    static fbObjectToArray(fbData) {
+        return Object.keys(fbData).map(key => {
+            const item = fbData[key]
             item.id = key
             return item
         })

@@ -29,7 +29,7 @@ export class Form {
                 isValid = validator(this.form[control].value) && isValid
             })
 
-            !isValid ? setError(this.form[control]) : clearError(this.form[control])
+            isValid ? clearError(this.form[control]) : setError(this.form[control])
 
             isFormValid = isFormValid && isValid
         })
